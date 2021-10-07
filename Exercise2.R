@@ -1,7 +1,7 @@
 MarkVal <- read.delim("MarkVal.txt")
 head(MarkVal)
 
-# Ex 2.1
+# Ex 2.1 ------------------------------------------------------------------
 par(mfrow = c(2,2))
 qqnorm(MarkVal$Assets, main = "Assets Q-Q Plot")
 qqnorm(MarkVal$Sales, main = "Sales Q-Q Plot")
@@ -28,8 +28,8 @@ qqplot(theoretical_quantiles, d2,
        xlab = "Chi-square quantiles",
        ylab = "Squared distances")
 
-# Ex 2.2
 
+# Ex 2.2 ------------------------------------------------------------------
 LnMarkVal <- log(MarkVal[,2:5])
 par(mfrow = c(2,2))
 qqnorm(LnMarkVal$Assets, main = "log of Assets Q-Q Plot")
