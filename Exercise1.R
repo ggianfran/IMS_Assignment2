@@ -29,13 +29,26 @@ axes
 
 
 # Ex 1.3 ------------------------------------------------------------------
-
-
-
-
+# mu_i = x_bar +/- sqrt( critical_value * S[i,i] / n)
+simultaneously_valid_conf_intervals <- matrix(0, 2, 3)
+colnames(simultaneously_valid_conf_intervals) <- c("mu_1", "mu_2", "mu_3")
+rownames(simultaneously_valid_conf_intervals) <- c("Lower bound", "Upper bound")
+for (i in 1:3) {
+  simultaneously_valid_conf_intervals[1,i] <- X_bar[i] - abs(sqrt(critical_value * S[i,i] / n))
+  simultaneously_valid_conf_intervals[2,i] <- X_bar[i] + abs(sqrt(critical_value * S[i,i] / n))
+}
+simultaneously_valid_conf_intervals
 
 # Ex 1.4 ------------------------------------------------------------------
-
+# mu_i = x_bar +/- t_{n-1}(alpha/2p) * sqrt(S[i,i] / n)
+bonferroni_conf_intervals <- matrix(0, 2, 3)
+colnames(bonferroni_conf_intervals) <- c("mu_1", "mu_2", "mu_3")
+rownames(bonferroni_conf_intervals) <- c("Lower bound", "Upper bound")
+for (i in 1:3) {
+  bonferroni_conf_intervals[1,i] <- X_bar[i] - abs(qt(1 - alpha/(2*p), df = n-1) * sqrt(S[i,i] / n))
+  bonferroni_conf_intervals[2,i] <- X_bar[i] + abs(qt(1 - alpha/(2*p), df = n-1) * sqrt(S[i,i] / n))
+}
+bonferroni_conf_intervals
 
 
 
