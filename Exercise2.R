@@ -56,4 +56,4 @@ qqplot(theoretical_quantiles, lnD2,
        main = "Chi-square plot of Log of Multivariate MarkVal Data",
        xlab = "Chi-square quantiles",
        ylab = "Squared distances")
-qqline(theoretical_quantiles, lnD2)
+

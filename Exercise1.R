@@ -14,7 +14,7 @@ critical_value <- ((n-1)*p)/(n-p) * qf(1-alpha, df1 = p, df2 = n-p)
 T2 = as.vector(n * t(X_bar - u0) %*% solve(S) %*% (X_bar - u0))
 
 # If true, reject H_0
-(Answ_1.1 <- T2 > critical_value)
+(Reject_H_0 <- T2 > critical_value)
 
 
 # Ex 1.2 ------------------------------------------------------------------
