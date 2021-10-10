@@ -27,6 +27,7 @@ qqplot(theoretical_quantiles, d2,
        main = "Chi-square plot of Multivariate MarkVal Data",
        xlab = "Chi-square quantiles",
        ylab = "Squared distances")
+qqline(d2)
 
 
 # Ex 2.2 ------------------------------------------------------------------
@@ -56,4 +57,5 @@ qqplot(theoretical_quantiles, lnD2,
        main = "Chi-square plot of Log of Multivariate MarkVal Data",
        xlab = "Chi-square quantiles",
        ylab = "Squared distances")
-
+qqline(lnD2, distribution = function(p) qchisq(p, df = p),
+       probs = c(0.25, 0.75))
